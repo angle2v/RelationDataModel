@@ -52,13 +52,10 @@
 > 정보 그룹 사이의 관계를 인식하고 그것을 다른 사람에게 표현할수 있도록 도와준다.
 							  
 ### 표현	 
-
-|Entity|->|Table|
-									 
-|Attribute|->|Column| 
-									
-|Relation|->|PK, FK|
-									 
+|:--:||:--:||:--:|
+|Entity|->|Table|									 
+|Attribute|->|Column|									
+|Relation|->|PK, FK|									 
 |Tuple|->|Row|
 														
 					
