@@ -69,10 +69,10 @@
 								
 ### 2. 후보키(Candidate Key) : 	
 
-|:-------:|:-------:|:-------:|
-| email    | national_id |  일때   user_id, email, national_id 는 후보키(Candidate Key)
-																	  |	a@mail.c | 100001	   |		user_id 는 기본키(Primary Key) 
-																	  |	b@mail.c | 100002	   |	  	email, national_id 는 대체키(Alternate Key)
+|:----------:|:----------:|:----------:|
+| email    | national_id |  일때   user_id, email, national_id 는 후보키(Candidate Key)|
+																	  |	a@mail.c | 100001	   |		user_id 는 기본키(Primary Key) |
+																	  |	b@mail.c | 100002	   |	  	email, national_id 는 대체키(Alternate Key)|
 								
 3. 중복키(Composite Key)
 한가지 키 만으로 식별이 불가할때 중복되는 것을 합쳐서 식별할수 있는데 이것을 중복키라고 한다. 
