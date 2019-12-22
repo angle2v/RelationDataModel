@@ -69,7 +69,7 @@
 								
 ### 2. 후보키(Candidate Key) : 	
 
-|:--:|:--:|:--:|
+|:-------:|:-------:|:-------:|
 | email    | national_id |  일때   user_id, email, national_id 는 후보키(Candidate Key)
 																	  |	a@mail.c | 100001	   |		user_id 는 기본키(Primary Key) 
 																	  |	b@mail.c | 100002	   |	  	email, national_id 는 대체키(Alternate Key)
