@@ -53,13 +53,13 @@
 							  
 ### 표현	 
 
-Entity|->|Table
+|Entity|->|Table|
 									 
-Attribute|->|Column  
+|Attribute|->|Column| 
 									
-Relation|->|PK, FK
+|Relation|->|PK, FK|
 									 
-Tuple|->|Row
+|Tuple|->|Row|
 														
 					
 2. Identifier : Primary Key [식별자]
