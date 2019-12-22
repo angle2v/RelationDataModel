@@ -71,8 +71,8 @@
 | - | - | - |
 |:----------:|:----------:|:----------:|
 | email    | national_id |  일때   user_id, email, national_id 는 후보키(Candidate Key)|
-																	  |	a@mail.c | 100001	   |		user_id 는 기본키(Primary Key) |
-																	  |	b@mail.c | 100002	   |	  	email, national_id 는 대체키(Alternate Key)|
+|a@mail.c | 100001|user_id 는 기본키(Primary Key) |								
+|b@mail.c | 100002|email, national_id 는 대체키(Alternate Key)|
 								
 3. 중복키(Composite Key)
 한가지 키 만으로 식별이 불가할때 중복되는 것을 합쳐서 식별할수 있는데 이것을 중복키라고 한다. 
@@ -87,10 +87,10 @@ Optionality(선택성) : 있을수도, 없을수도 있다.
 Lee			댓글2										
 Park		댓글3		Mandatory : 예시에서 댓글은 바드시 저자가 있다.				|로 표현
 				
-3. 논리적 데이터 모델링
+### 3. 논리적 데이터 모델링
+
+### 1. Mapping Rule
 				
-1. Mapping Rule
-						
 표현 	 
 
 >Entity      -> 	Table
@@ -102,80 +102,78 @@ Park		댓글3		Mandatory : 예시에서 댓글은 바드시 저자가 있다.			
 >Tuple       -> 	Row
 											
 						
-						1. 1:1 관계의 처리
+1. 1:1 관계의 처리
 							
-							- 저자, 휴먼저자
+- 저자, 휴먼저자
 							
-							  저자와 휴먼저자가 있다고 가정 할때 저자는 휴먼저자가 있을수도 없을수도 있지만(Optional)
+저자와 휴먼저자가 있다고 가정 할때 저자는 휴먼저자가 있을수도 없을수도 있지만(Optional)
 							  
-							  휴먼저자는 저자가 반드시 있어야 한다.(Mandatory)
+휴먼저자는 저자가 반드시 있어야 한다.(Mandatory)
 						
-						2. 1:N 관계의 처리
+### 2. 1:N 관계의 처리
 						
-							- 저자, 글, 댓글
+- 저자, 글, 댓글
 							
-							  저자와 글 그리고 댓글이 있다고 가정 할때 
+저자와 글 그리고 댓글이 있다고 가정 할때 
 							  
-							  저자는 댓글이 있을수도 있고 없을수도 있다.(Optional)
+저자는 댓글이 있을수도 있고 없을수도 있다.(Optional)
 							  
-							  그리고, 글 또한 댓글이 댓글이 있을수도 있고, 없을수도 있다.(Optional)
+그리고, 글 또한 댓글이 댓글이 있을수도 있고, 없을수도 있다.(Optional)
 							  
-							  그러나, 댓글은 글, 저자가 반드시 있어야만 한다.(Mandatory)
+그러나, 댓글은 글, 저자가 반드시 있어야만 한다.(Mandatory)
 					
-						3. N:M 관계의 처리
+### 3. N:M 관계의 처리
 							
-							- 저자, 책, (쓰기)
+- 저자, 책, (쓰기)
 							
-							 1. N:M 관계에서는 애매한 상황이 발생하는데 이러한 상황에서 Mapping Table 생성하여 해결해 준다.
+1. N:M 관계에서는 애매한 상황이 발생하는데 이러한 상황에서 Mapping Table 생성하여 해결해 준다.
 							
-								서로 공통된 컬럼을 생성하여 테이블에 입력한다. Mapping Table(Write Table)을 작성하게 되면 
+서로 공통된 컬럼을 생성하여 테이블에 입력한다. Mapping Table(Write Table)을 작성하게 되면 
 								
-								이 두개의 Table이 결합되었을때 의미가 있는정보 예로 각각의 저자가 그 글을 언제 수정하기 시작하였는가
+이 두개의 Table이 결합되었을때 의미가 있는정보 예로 각각의 저자가 그 글을 언제 수정하기 시작하였는가
 								
-								와 같은 정보를 추가 하여 줄수있다.
+와 같은 정보를 추가 하여 줄수있다.
 								
-							 2. 저자와 책 그리고 추가된 Mapping Table(작성 기능)가 있다고 가정 할때
+2. 저자와 책 그리고 추가된 Mapping Table(작성 기능)가 있다고 가정 할때
 							 
-								저자는 작성을 할수도 있고, 안할수도 있다.(Optional)
+저자는 작성을 할수도 있고, 안할수도 있다.(Optional)
 								
-								책은 작성을 할수도 있고, 안할수도 있다.(Optional)
+책은 작성을 할수도 있고, 안할수도 있다.(Optional)
 								
-								작성 기능 저자가 있어야만하고, 책이 있어야만 한다.(Mandatory)
+작성 기능 저자가 있어야만하고, 책이 있어야만 한다.(Mandatory)
 
 							
-				4. 물리적 데이터 모델링
+### 4. 물리적 데이터 모델링
 				
-					1. 정규화
+>1. 정규화
 					
-						- UNF -> 1NF -> 2NF -> 3NF -> 4NF -> 5NF -> 6NF 순차적으로 정규화 한다.
+- UNF -> 1NF -> 2NF -> 3NF -> 4NF -> 5NF -> 6NF 순차적으로 정규화 한다.
 					
-						1. UNF (Un Normalize Form)
+1. UNF (Un Normalize Form)
 						
-						 - 정규화가 적용되어 있지 않은 형태의 표를 의미한다.						   
+- 정규화가 적용되어 있지 않은 형태의 표를 의미한다.						   
 						 
-						2. 1NF (1st Normalize Form) 
+2. 1NF (1st Normalize Form) 
 						
-						 - Atomic Columsn 를 만족한다면 제1 정규형에 속한다.
+- Atomic Columsn 를 만족한다면 제1 정규형에 속한다.
 						   
 						 
-						3. 2NF (2nd Normalize Form) 
+3. 2NF (2nd Normalize Form) 
 						 
-						 - 1NF를 만족시키고, NoPartial Dependencies 를 만족한다면 제2 정규형에 속한다.
+- 1NF를 만족시키고, NoPartial Dependencies 를 만족한다면 제2 정규형에 속한다.
 						
-						4. 3NF (3rd Normalize Form)  
+4. 3NF (3rd Normalize Form)  
 
-						 - 2NF를 만족시키고, No Transitive Dependencies 를 만족한다면 제3 정규형에 속한다.
+- 2NF를 만족시키고, No Transitive Dependencies 를 만족한다면 제3 정규형에 속한다.
 						 
-						5. 4NF (4th Normalize Form) 
+5. 4NF (4th Normalize Form) 
 						
-						 - 3NF를 만족시키고, Every non-trivial,multi-value dependency has a superkey 를 만족한다면 제4 정규형에 속한다.
+- 3NF를 만족시키고, Every non-trivial,multi-value dependency has a superkey 를 만족한다면 제4 정규형에 속한다.
 						
-						6. 5NF (5th Normalize Form) 
+6. 5NF (5th Normalize Form) 
 						
-						 - 4NF를 만족시키고, Every non-trivial join dependency is implied by a candidate key를 만족한다면 제5 저규형에 속한다.
+- 4NF를 만족시키고, Every non-trivial join dependency is implied by a candidate key를 만족한다면 제5 저규형에 속한다.
 						
-						7. 6NF (6th Normalize Form) 
+7. 6NF (6th Normalize Form) 
 						
-						 - 5NF를 만족시키고, Ecry join dependency is trivial을 만족한다면 제 6 정규형에 속한다.
-							  
-		 
+- 5NF를 만족시키고, Ecry join dependency is trivial을 만족한다면 제 6 정규형에 속한다.
