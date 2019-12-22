@@ -61,15 +61,16 @@
 |Tuple|->|Row|
 														
 					
-2. Identifier : Primary Key [식별자]
+### Identifier : Primary Key [식별자]
 							
-1. 인조키(대리키)[시퀀스] 
+### 1. 인조키(대리키)[시퀀스] 
 
-행이 추가될 때마다 자동으로 1씩 증가 시켜서 중복되지 않는 값을 부여하는 것을 통해서 식별자를 제공할수 있다. 
+> 행이 추가될 때마다 자동으로 1씩 증가 시켜서 중복되지 않는 값을 부여하는 것을 통해서 식별자를 제공할수 있다. 
 								
-2. 후보키(Candidate Key) : 	
+### 2. 후보키(Candidate Key) : 	
 
-User_id	  | email    | national_id |  일때   user_id, email, national_id 는 후보키(Candidate Key)
+|:--:|:--:|:--:|
+| email    | national_id |  일때   user_id, email, national_id 는 후보키(Candidate Key)
 																	  |	a@mail.c | 100001	   |		user_id 는 기본키(Primary Key) 
 																	  |	b@mail.c | 100002	   |	  	email, national_id 는 대체키(Alternate Key)
 								
